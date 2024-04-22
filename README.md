@@ -88,7 +88,6 @@ npm i react-router-dom;
 ```
 
 ## Reference Links
-
 - [File Structure](https://legacy.reactjs.org/docs/faq-structure.html)
 - [How To Structure React Projects From Beginner To Advanced](https://blog.webdevsimplified.com/2022-07/react-folder-structure/)
 - [Deploying React apps to GitHub Pages](https://blog.logrocket.com/deploying-react-apps-github-pages/)
