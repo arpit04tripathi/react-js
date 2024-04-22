@@ -9,22 +9,23 @@ import About from "./pages/About";
 function App() {
   return (
     <div>
-      <header className="bg-light p-3">
+      <header className="bg-warning p-3 mb-2">
         <Header />
         <Navbar />
       </header>
       <main>
         <div className="row">
-          <div className="col-3 p-5">
-            <Sidebar />
+          <div className="col-3 p-5 bg-secondary">
+            <Sidebar/>
           </div>
           <div className="col-9">
             <Home />
+            <br/>
             <About />
           </div>
         </div>
       </main>
-      <footer className="bg-light p-3">
+      <footer className="bg-primary p-3 mt-3">
         <Footer />
       </footer>
     </div>

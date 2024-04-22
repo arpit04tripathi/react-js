@@ -1,6 +1,6 @@
 function Navbar() {
   return (
-    <div>
+    <div className="bg-light">
       <p>Navbar</p>
     </div>
   );

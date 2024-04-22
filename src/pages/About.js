@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div>
+    <div className="bg-warning">
       <p>About</p>
     </div>
   );

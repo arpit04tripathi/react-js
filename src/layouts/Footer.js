@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div>
+    <div className="bg-light">
       <p>Footer</p>
     </div>
   );
