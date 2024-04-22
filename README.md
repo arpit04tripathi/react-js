@@ -79,3 +79,6 @@ npm i -g create-react-app
 npm init react-app react-js
 npm start
 ```
+
+- [File Structure](https://legacy.reactjs.org/docs/faq-structure.html)
+- [How To Structure React Projects From Beginner To Advanced](https://blog.webdevsimplified.com/2022-07/react-folder-structure/)
