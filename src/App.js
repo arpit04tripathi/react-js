@@ -9,25 +9,27 @@ import About from "./pages/About";
 function App() {
   return (
     <div>
-      <header className="bg-warning p-3 mb-2">
-        <Header />
-        <Navbar />
-      </header>
-      <main>
-        <div className="row">
-          <div className="col-3 p-5 bg-secondary">
-            <Sidebar/>
+      <div>
+        <header className="bg-warning p-3 mb-2">
+          <Header />
+          <Navbar />
+        </header>
+        <main>
+          <div className="row">
+            <div className="col-3 p-5 bg-secondary">
+              <Sidebar />
+            </div>
+            <div className="col-9">
+              <Home />
+              <br />
+              <About />
+            </div>
           </div>
-          <div className="col-9">
-            <Home />
-            <br/>
-            <About />
-          </div>
-        </div>
-      </main>
-      <footer className="bg-primary p-3 mt-3">
-        <Footer />
-      </footer>
+        </main>
+        <footer className="bg-primary p-3 mt-3">
+          <Footer />
+        </footer>
+      </div>
     </div>
   );
 }
