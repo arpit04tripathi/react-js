@@ -14,12 +14,16 @@ function App() {
           <AppHeader />
         </header>
         <main>
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Hi Arpit! </strong> This is bootstrap 5 alert-dismissible.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
           <Routes>
-            <Route path="" exact="true" element={<Home/>}></Route>
-            <Route path="tabs" element={<ReactTabs/>}></Route>
+            <Route path="" exact="true" element={<Home />}></Route>
+            <Route path="tabs" element={<ReactTabs />}></Route>
           </Routes>
         </main>
-        <hr/>
+        <hr />
         <footer>
           <Footer />
         </footer>
