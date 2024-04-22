@@ -1,34 +1,39 @@
-import "./App.css";
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
-import Footer from "./components/Footer";
-import AppHeader from "./components/AppHeader";
+import Footer from "./layouts/Footer";
+import Header from "./layouts/Header";
+import Navbar from "./layouts/Navbar";
+import Sidebar from "./layouts/Sidebar";
 
-import ReactTabs from "./pages/ReactTabs";
 import Home from "./pages/Home";
+import About from "./pages/About";
+
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <Router basename="/react-js">
-      <div className="App">
-        <header>
-          <AppHeader />
+    <BrowserRouter basename="/react-js">
+      <div>
+        <header className="bg-warning p-3 mb-2">
+          <Header />
+          <Navbar />
         </header>
         <main>
-          <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Hi Arpit! </strong> This is bootstrap 5 alert-dismissible.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          <div className="row">
+            <div className="col-3 p-5 bg-secondary">
+              <Sidebar />
+            </div>
+            <div className="col-9">
+              <Routes>
+                <Route path="" exact="true" element={<Home />}></Route>
+                <Route path="about" element={<About />}></Route>
+              </Routes>
+            </div>
           </div>
-          <Routes>
-            <Route path="" exact="true" element={<Home />}></Route>
-            <Route path="tabs" element={<ReactTabs />}></Route>
-          </Routes>
         </main>
-        <hr />
-        <footer>
+        <footer className="bg-primary p-3 mt-3">
           <Footer />
         </footer>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 

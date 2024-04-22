@@ -83,6 +83,9 @@ npm start
 sh local/git.sh;
 npm i bootstrap sass;
 npm i gh-pages --save-dev;
+npm i react-router-dom;
+./node_modules/.bin/gh-pages --version
+
 ```
 
 ## Reference Links
@@ -90,4 +93,3 @@ npm i gh-pages --save-dev;
 - [How To Structure React Projects From Beginner To Advanced](https://blog.webdevsimplified.com/2022-07/react-folder-structure/)
 - [Deploying React apps to GitHub Pages](https://blog.logrocket.com/deploying-react-apps-github-pages/)
 - [How To Deploy A React App To Github Pages (Simple)](https://www.youtube.com/watch?v=Q9n2mLqXFpU)
-
