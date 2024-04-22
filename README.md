@@ -84,4 +84,5 @@ npm start
 sh local/git.sh;
 npm i bootstrap sass;
 npm i gh-pages --save-dev;
+npm i react-router-dom;
 ```
