@@ -82,4 +82,5 @@ npm start
 
 ```sh
 sh local/git.sh
+npm i bootstrap sass
 ```
