@@ -1,22 +1,33 @@
-import logo from "./logo.svg";
-import "./App.css";
+import Footer from "./layouts/Footer";
+import Header from "./layouts/Header";
+import Navbar from "./layouts/Navbar";
+import Sidebar from "./layouts/Sidebar";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <strong>Hi Arpit! </strong> This is bootstrap 5 alert-dismissible.
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hi Arpit! Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
+    <div>
+      <header className="bg-warning p-3 mb-2">
+        <Header />
+        <Navbar />
       </header>
+      <main>
+        <div className="row">
+          <div className="col-3 p-5 bg-secondary">
+            <Sidebar/>
+          </div>
+          <div className="col-9">
+            <Home />
+            <br/>
+            <About />
+          </div>
+        </div>
+      </main>
+      <footer className="bg-primary p-3 mt-3">
+        <Footer />
+      </footer>
     </div>
   );
 }
