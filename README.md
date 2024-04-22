@@ -81,6 +81,7 @@ npm start
 ```
 
 ```sh
-sh local/git.sh
-npm i bootstrap sass
+sh local/git.sh;
+npm i bootstrap sass;
+npm i gh-pages --save-dev;
 ```
