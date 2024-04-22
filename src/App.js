@@ -15,8 +15,8 @@ function App() {
         </header>
         <main>
           <Routes>
-            <Route path="/" exact="true" element={<Home/>}></Route>
-            <Route path="/tabs" element={<ReactTabs/>}></Route>
+            <Route path="" exact="true" element={<Home/>}></Route>
+            <Route path="tabs" element={<ReactTabs/>}></Route>
           </Routes>
         </main>
         <hr/>
