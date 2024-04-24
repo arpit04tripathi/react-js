@@ -12,10 +12,8 @@ function App() {
   return (
     <BrowserRouter basename="/react-js">
       <div>
-        <header className="bg-warning p-3 mb-2">
-          <Header />
-          <Navbar />
-        </header>
+        <Navbar />
+        <Header />
         <main>
           <div className="row">
             <div className="col-3 p-5 bg-secondary">
@@ -29,9 +27,7 @@ function App() {
             </div>
           </div>
         </main>
-        <footer className="bg-primary p-3 mt-3">
-          <Footer />
-        </footer>
+        <Footer />
       </div>
     </BrowserRouter>
   );
