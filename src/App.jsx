@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import ReactComponents from "./pages/ReactComponents";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Routes>
                 <Route path="" exact="true" element={<Home />}></Route>
                 <Route path="about" element={<About />}></Route>
+                <Route path="react-components" element={<ReactComponents />}></Route>
               </Routes>
             </div>
           </div>

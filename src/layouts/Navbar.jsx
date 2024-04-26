@@ -34,11 +34,9 @@ function Navbar() {
                   Components
                 </a>
                 <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="/">
-                      Action
-                    </a>
-                  </li>
+                  <Link to="/react-components" className="nav-link">
+                    React Components
+                  </Link>
                   <li>
                     <a class="dropdown-item" href="/">
                       Another action
