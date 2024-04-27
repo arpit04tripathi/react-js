@@ -1,6 +1,8 @@
 import { useState } from "react";
 import AccordionItem from "../../components/AccordionItem";
 import Input from "../../components/Input";
+import {HomeIcon, PlusIcon} from '../../components/icons';
+import Button from '../../components/Button';
 
 const ComponentWithStateAndHooks = () => {
   let [count, setCount] = useState(0);
@@ -97,12 +99,57 @@ const ComponentWithStateAndHooks = () => {
             ))}
           </ul>
         </AccordionItem>
-        <AccordionItem itemId="Four" parentId="accordionExample" heading="Forwarding props to Wrapped elements">
+        <AccordionItem itemId="Five" parentId="accordionExample" heading="Forwarding props to Wrapped elements">
           <div id="content">
             <Input type="text" placeholder="Your name" />
             <Input type="text" value="Pre-filled as Arpit" placeholder="Your name" />
-            <Input richText placeholder="Your message" />            
+            <Input richText placeholder="Your message" />
           </div>
+        </AccordionItem>
+        <AccordionItem itemId="Six" parentId="accordionExample" heading="Creating Flexible Components">
+          <section>
+            <h2>Filled Button (Default)</h2>
+            <p>
+              <Button>Default</Button>
+            </p>
+            <p>
+              <Button mode="filled">Filled (Default)</Button>
+            </p>
+          </section>
+          <section>
+            <h2>Button with Outline</h2>
+            <p>
+              <Button mode="outline">Outline</Button>
+            </p>
+          </section>
+          <section>
+            <h2>Text-only Button</h2>
+            <p>
+              <Button mode="text">Text</Button>
+            </p>
+          </section>
+          <section>
+            <h2>Button with Icon</h2>
+            <p>
+              <Button Icon={HomeIcon}>Home</Button>
+            </p>
+            <p>
+              <Button Icon={PlusIcon} mode="text">
+                Add
+              </Button>
+            </p>
+          </section>
+          <section>
+            <h2>Buttons Should Support Any Props</h2>
+            <p>
+              <Button mode="filled" disabled>
+                Disabled
+              </Button>
+            </p>
+            <p>
+              <Button onClick={() => console.log("Clicked!")}>Click me</Button>
+            </p>
+          </section>
         </AccordionItem>
 
         <div>
@@ -113,3 +160,5 @@ const ComponentWithStateAndHooks = () => {
   );
 };
 export default ComponentWithStateAndHooks;
+
+
