@@ -1,20 +1,29 @@
-import logo from "../assets/logo.svg";
-import AccordionItem from "../components/AccordionItem";
+import logo from "../../assets/logo.svg";
+import AccordionItem from "../../components/AccordionItem";
 import {
   ComponentProps,
   ComponentPropsDestructured,
   ComponentPropsWithChildren,
   ComponentPropsDestructuredWithChildren,
-} from "../features/react-components/PassingComponentProps";
+} from "../../features/react-components/PassingComponentProps";
 
 const reactDescription = ["Fundamental", "Crucial", "Core", "Advanced", "Basic", "Intermediate"];
 const getRandomInt = () => Math.floor(Math.random() * reactDescription.length);
-const PROPS_JSON = { title: "React JS", description: "A new course with props as JSON" };
 
-function ReactComponents() {
+const PROPS_AS_JSON = { title: "React JS", description: "A new course with props as JSON" };
+
+function ComponentsWithPropsAndComposition() {
   return (
-    <div id="react-coponents">
-      <div></div>
+    <div id="component-props">
+      <header className="bg-dark text-white rounded-1 p-3 mb-3">
+        <h1>React Components</h1>
+        <hr />
+        <ul>
+          <li>Component Props as single variable props (<code>props.name</code>) or multiple variables using de-structuring (<code>name</code>)</li>
+          <li>Component compostion with <code>props.children</code> or de-strucutred <code>children</code> attribute</li>
+          <li>import images as variable and then use in img src</li>
+        </ul>
+      </header>
       <div className="accordion" id="accordionExample">
         <AccordionItem itemId="One" parentId="accordionExample" heading="Import Images and Text Randomization" show>
           <p>Changing text - [{reactDescription[getRandomInt()]}]</p>
@@ -39,7 +48,7 @@ function ReactComponents() {
             <ComponentProps title="React JS" description="A new course with props as HTML attributes">
               <i>italic child not displayed</i>
             </ComponentProps>
-            <ComponentProps {...PROPS_JSON}>
+            <ComponentProps {...PROPS_AS_JSON}>
               <i>italic child not displayed</i>
             </ComponentProps>
             <ComponentPropsDestructured title="React JS" description="A new course">
@@ -78,4 +87,4 @@ function ReactComponents() {
   );
 }
 
-export default ReactComponents;
+export default ComponentsWithPropsAndComposition;

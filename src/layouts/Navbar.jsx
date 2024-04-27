@@ -1,3 +1,4 @@
+import * as URL from "../data/url";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -5,7 +6,7 @@ function Navbar() {
     <div className="bg-light">
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand border-success" href="./">
+          <a className="navbar-brand border-success" href={URL.HOME}>
             Learn React JS
           </a>
           <button
@@ -28,16 +29,14 @@ function Navbar() {
                   </Link>
                 </button>
               </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="./" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <li className="nav-item dropdown py-2">
+                <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                   React Components
-                </a>
+                </button>
                 <ul className="dropdown-menu">
-                  <NavItem label="Props" link="/react-components" />
-                  <NavItem label="Another action" link="/" />
-                  <li>
-                    <hr className="dropdown-divider"></hr>
-                  </li>
+                  <NavItem label="Props" link="/component-props" />
+                  <NavItem label="State" link="/component-state" />
+                  <NavItemDivider />
                   <NavItem label="Something else here" link="/" />
                 </ul>
               </li>
@@ -62,5 +61,13 @@ function NavItem({ label, link, disabled = false }) {
     </li>
   );
 }
+
+const NavItemDivider = () => {
+  return (
+    <li>
+      <hr className="dropdown-divider"></hr>
+    </li>
+  );
+};
 
 export default Navbar;

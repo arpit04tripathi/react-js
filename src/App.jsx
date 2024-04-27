@@ -7,7 +7,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import ReactComponents from "./pages/ReactComponents";
+import ComponentsWithPropsAndComposition from "./pages/react-components/ComponentsWithPropsAndComposition";
+import ComponentWithStateAndHooks from "./pages/react-components/ComponentWithStateAndHooks";
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
               <Routes>
                 <Route path="" exact="true" element={<Home />}></Route>
                 <Route path="about" element={<About />}></Route>
-                <Route path="react-components" element={<ReactComponents />}></Route>
+                <Route path="component-props" element={<ComponentsWithPropsAndComposition />}></Route>
+                <Route path="component-state" element={<ComponentWithStateAndHooks />}></Route>
               </Routes>
             </div>
           </div>
