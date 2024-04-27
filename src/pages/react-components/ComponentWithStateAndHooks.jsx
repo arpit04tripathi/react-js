@@ -5,6 +5,7 @@ const ComponentWithStateAndHooks = () => {
   let [count, setCount] = useState(0);
   const [isError, SetIsError] = useState(false);
   const [active, setActive] = useState(false);
+  const DUMMY_TODOS = ["Learn React", "Practice React", "Profit!"];
 
   let modal = (
     <div data-testid="alert" id="alert" className="border border-4 rounded-5 p-5">
@@ -31,7 +32,9 @@ const ComponentWithStateAndHooks = () => {
           <li>
             Conditional rendering using <code>(var && "html_var")</code> or ternary <code>(var ? "html_var" : "")</code>
           </li>
-          <li>Conditionally add class based on state or prop using <code>className</code></li>
+          <li>
+            Conditionally add class based on state or prop using <code>className</code>
+          </li>
         </ul>
       </header>
       <div className="accordion" id="accordionExample">
@@ -43,7 +46,7 @@ const ComponentWithStateAndHooks = () => {
             | Count is {count}
           </span>
         </AccordionItem>
-        <AccordionItem itemId="One" parentId="accordionExample" heading="Conditional show Error Modal using html as var" show>
+        <AccordionItem itemId="Two" parentId="accordionExample" heading="Conditional show Error Modal using html as var">
           <div className="row">
             <div className="col-2">
               <button className="btn btn-danger" onClick={() => SetIsError(true)}>
@@ -53,12 +56,26 @@ const ComponentWithStateAndHooks = () => {
             <div className="col-3">{isError && modal}</div>
           </div>
         </AccordionItem>
-        <AccordionItem itemId="One" parentId="accordionExample" heading="Conditional css class assign using className" show>
-        <div>
-            <p className={active ? 'active' : ''}>Style me! <code>{active ? 'active' : ''}</code></p>
-            <button className="btn btn-primary" onClick={() => setActive(!active)}>Toggle style</button>
-        </div>
+        <AccordionItem itemId="Three" parentId="accordionExample" heading="Conditional css class assign using className">
+          <div>
+            <p className={active ? "active" : ""}>
+              Style me! <code>{active ? "active" : ""}</code>
+            </p>
+            <button className="btn btn-primary" onClick={() => setActive(!active)}>
+              Toggle style
+            </button>
+          </div>
         </AccordionItem>
+        <AccordionItem itemId="Four" parentId="accordionExample" heading="Output Array Dynamically">
+          <ul>
+            {DUMMY_TODOS.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </AccordionItem>
+        <div>
+          <pre>{JSON.stringify(process.env, null, 2)}</pre>
+        </div>
       </div>
     </div>
   );
