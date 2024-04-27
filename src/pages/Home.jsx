@@ -4,9 +4,9 @@ import logo from "../assets/logo.svg";
 function Home() {
   return (
     <div className="App-header">
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <div className="alert alert-warning alert-dismissible fade show" role="alert">
         <strong>Hi Arpit! </strong> This is bootstrap 5 alert-dismissible.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       <img src={logo} className="App-logo" alt="logo" />
       <p>

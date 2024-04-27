@@ -12,7 +12,7 @@ function Sidebar() {
       <p>Sidebar - with json array</p>
       <ul>
       {content.map((item, index) => {
-        return <li><a href={item.link} target="_blank" rel="noopener noreferrer">{item.displayText}</a></li>
+        return <li  key={"li-"+index} ><a href={item.link}target="_blank" rel="noopener noreferrer">{item.displayText}</a></li>
       })}
       </ul>
     </div>

@@ -19,20 +19,20 @@ function ReactComponents() {
           image as import <img src={logo} alt="logo here" width="50rem" />
         </p>
       </div>
-      <div class="border-start border-5 border-success">
-        <div class="m-5">
-          <p>
-            <h2>Component Props</h2>Any HTML element sttribute is a prop, we can use it in the component as
-            <ul>
-              <li>
-                <strong>props.title</strong> or
-              </li>
-              <li>
-                destructure it as <strong>variable</strong>
-              </li>
-            </ul>
-            We can also pass the props as JSON object to the custom component.
-          </p>
+      <div className="border-start border-5 border-success">
+        <div className="m-5">
+          <h2>Component Props</h2>
+
+          <ul>
+            <p>Any HTML element sttribute is a prop, we can use it in the component as</p>
+            <li>
+              <strong>props.title</strong> or
+            </li>
+            <li>
+              destructure it as <strong>variable</strong>
+            </li>
+            <p>We can also pass the props as JSON object to the custom component.</p>
+          </ul>
         </div>
         <ComponentProps title="React JS" description="A new course with props as HTML attributes">
           <i>italic child not displayed</i>
@@ -44,19 +44,18 @@ function ReactComponents() {
           <i>italic child not displayed</i>
         </ComponentPropsDestructured>
       </div>
-      <div class="border-start border-5 border-success">
-        <div class="m-5">
-          <p>
-            <h2>Component Composition</h2>Any HTML between your custom component tags is available in props as children so you can do
-            <ul>
-              <li>
-                <strong>props.childred</strong> or
-              </li>
-              <li>
-                destructure it as <strong>variable</strong>
-              </li>
-            </ul>
-          </p>
+      <div className="border-start border-5 border-success">
+        <div className="m-5">
+          <h2>Component Composition</h2>
+          <p>Any HTML between your custom component tags is available in props as children so you can do</p>
+          <ul>
+            <li>
+              <strong>props.childred</strong> or
+            </li>
+            <li>
+              destructure it as <strong>variable</strong>
+            </li>
+          </ul>
         </div>
 
         <ComponentPropsWithChildren title="React JS" description="A new course">
