@@ -6,6 +6,11 @@ const ComponentWithStateAndHooks = () => {
   const [isError, SetIsError] = useState(false);
   const [active, setActive] = useState(false);
   const DUMMY_TODOS = ["Learn React", "Practice React", "Profit!"];
+  const DUMMY_JSON_TODOS = [
+    { name: "Learn React", order: "A" },
+    { name: "Practice React", order: "B" },
+    { name: "Profit!", order: "C" },
+  ];
 
   let modal = (
     <div data-testid="alert" id="alert" className="border border-4 rounded-5 p-5">
@@ -69,7 +74,16 @@ const ComponentWithStateAndHooks = () => {
         <AccordionItem itemId="Four" parentId="accordionExample" heading="Output Array Dynamically">
           <ul>
             {DUMMY_TODOS.map((item, index) => (
-              <li key={index}>{item}</li>
+              <li key={index}>
+                {item} - {item}
+              </li>
+            ))}
+          </ul>
+          <ul>
+            {DUMMY_JSON_TODOS.map((item, index) => (
+              <li key={index}>
+                {index} - {item.order} - {item.name}
+              </li>
             ))}
           </ul>
         </AccordionItem>

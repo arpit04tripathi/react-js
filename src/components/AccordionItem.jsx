@@ -6,7 +6,7 @@ const AccordionItem = ({children, parentId, itemId, heading, show=false}) => {
   return (<div className="accordion-item">
     <h2 className="accordion-header">
       <button
-        className="accordion-button"
+        className={`accordion-button ${!show && " collapsed"}`}
         type="button"
         data-bs-toggle="collapse"
         data-bs-target={"#" + collapseId}
