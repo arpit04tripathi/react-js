@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AccordionItem from "../../components/AccordionItem";
+import Input from "../../components/Input";
 
 const ComponentWithStateAndHooks = () => {
   let [count, setCount] = useState(0);
@@ -32,13 +33,22 @@ const ComponentWithStateAndHooks = () => {
             Component State using hook <code>let [count, setCount] = useState(0)</code>
           </li>
           <li>
-            <code>onClick</code> actions to update state and display updated stae var.
+            <code>onClick</code> user events to update state and display updated stae var.
           </li>
           <li>
             Conditional rendering using <code>(var && "html_var")</code> or ternary <code>(var ? "html_var" : "")</code>
           </li>
           <li>
             Conditionally add class based on state or prop using <code>className</code>
+          </li>
+          <li>
+            React component can only return one element so we end up having an extra <code>div</code> in DOM for each component. This can be resolved by using{" "}
+            <code>Fragment</code> element as root as root element in components instead of div. OR use an <code>empty tag</code> as root element for the
+            component jsx.
+          </li>
+          <li>
+            Forwarding props to Wrapped elements, we can first destructure <code>...props</code> in the component function and then add <code>...props</code> on
+            the root element to forward the destructured props including event handlers like <code>onClick</code>
           </li>
         </ul>
       </header>
@@ -87,6 +97,14 @@ const ComponentWithStateAndHooks = () => {
             ))}
           </ul>
         </AccordionItem>
+        <AccordionItem itemId="Four" parentId="accordionExample" heading="Forwarding props to Wrapped elements">
+          <div id="content">
+            <Input type="text" placeholder="Your name" />
+            <Input type="text" value="Pre-filled as Arpit" placeholder="Your name" />
+            <Input richText placeholder="Your message" />            
+          </div>
+        </AccordionItem>
+
         <div>
           <pre>{JSON.stringify(process.env, null, 2)}</pre>
         </div>
