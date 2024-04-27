@@ -23,7 +23,7 @@ export function ComponentPropsWithChildren(props) {
   return (
     <div className="border p-5 m-5">
       <p>Title: {props.title}</p>
-      <p>Description: ComponentPropsWithChildren - {props.description}</p>
+      <p>Description: ComponentPropsWithChildren - <strong>{props.description}</strong></p>
       <div>{props.children}</div>
     </div>
   );
@@ -33,7 +33,7 @@ export function ComponentPropsDestructuredWithChildren({children, title, descrip
   return (
     <div className="border p-5 m-5">
       <p>Title: {title}</p>
-      <p>Description: ComponentPropsWithChildren - {description}</p>
+      <p>Description: ComponentPropsWithChildren - <strong>{description}</strong></p>
       <div>{children}</div>
     </div>
   );

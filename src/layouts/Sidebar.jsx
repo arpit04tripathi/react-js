@@ -8,7 +8,7 @@ const content = [
 
 function Sidebar() {
   return (
-    <div className="bg-light">
+    <div className="bg-light border border-5 border-primary rounded-5 p-4">
       <p>Sidebar - with json array</p>
       <ul>
       {content.map((item, index) => {

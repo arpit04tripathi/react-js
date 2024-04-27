@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <div className="bg-light">
-      <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="./">
-            Arpit
+      <nav className="navbar navbar-expand-lg bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand border-success" href="./">
+            Learn React JS
           </a>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -17,51 +17,49 @@ function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <Link to="/" exact className="nav-link active">
-                  Home
-                </Link>
-              </li>
-              <Link to="/about" className="nav-link">
-                About
-              </Link>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="./" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Components
-                </a>
-                <ul class="dropdown-menu">
-                  <Link to="/react-components" className="nav-link">
-                    React Components
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <button className="nav-link">
+                  <Link to="/" exact="true" className="nav-link active">
+                    Home
                   </Link>
+                </button>
+              </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="./" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  React Components
+                </a>
+                <ul className="dropdown-menu">
+                  <NavItem label="Props" link="/react-components" />
+                  <NavItem label="Another action" link="/" />
                   <li>
-                    <a class="dropdown-item" href="/">
-                      Another action
-                    </a>
+                    <hr className="dropdown-divider"></hr>
                   </li>
-                  <li>
-                    <hr class="dropdown-divider"></hr>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="/">
-                      Something else here
-                    </a>
-                  </li>
+                  <NavItem label="Something else here" link="/" />
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="/">
-                  Disabled
-                </a>
-              </li>
+              <NavItem label="About" link="/about" />
+              <NavItem label="Disabled" link="/" disabled />
             </ul>
           </div>
         </div>
       </nav>
     </div>
+  );
+}
+
+function NavItem({ label, link, disabled = false }) {
+  return (
+    <li className="nav-item">
+      <button className="nav-link">
+        <Link to={link} className={disabled ? "nav-link disabled" : "nav-link active"}>
+          {label}
+        </Link>
+      </button>
+    </li>
   );
 }
 
