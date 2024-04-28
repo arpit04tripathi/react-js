@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import AccordionItem from "../../components/AccordionItem";
 import Input from "../../components/Input";
-import {HomeIcon, PlusIcon} from '../../components/icons';
-import Button from '../../components/Button';
+import { HomeIcon, PlusIcon } from "../../components/icons";
+import Button from "../../components/Button";
 
 const ComponentWithStateAndHooks = () => {
   const query = new URLSearchParams(useLocation().search);
@@ -57,7 +57,9 @@ const ComponentWithStateAndHooks = () => {
           </li>
         </ul>
       </header>
-      <div><p>PARAMS = {query.get("name")}</p></div>
+      <div id="router-params">
+        <p>PARAMS = {query.get("name")}</p>
+      </div>
       <div className="accordion" id="accordionExample">
         <AccordionItem itemId="One" parentId="accordionExample" heading="useState Hook and onClick" show>
           <span>
@@ -163,5 +165,3 @@ const ComponentWithStateAndHooks = () => {
   );
 };
 export default ComponentWithStateAndHooks;
-
-

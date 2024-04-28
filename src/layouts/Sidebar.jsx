@@ -4,6 +4,7 @@ const content = [
   { displayText: "How To Structure React Projects", link: "https://blog.webdevsimplified.com/2022-07/react-folder-structure/" },
   { displayText: "Deploy to GitHub Pages", link: "https://blog.logrocket.com/deploying-react-apps-github-pages/" },
   { displayText: "React App To Github Pages", link: "https://www.youtube.com/watch?v=Q9n2mLqXFpU" },
+  { displayText: "Router - Query Params", link: "https://www.basedash.com/blog/guide-to-react-router-query-params"},
 ];
 
 function Sidebar() {
