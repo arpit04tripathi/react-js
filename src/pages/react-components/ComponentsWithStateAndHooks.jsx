@@ -4,7 +4,7 @@ import Input from "../../components/Input";
 import { HomeIcon, PlusIcon } from "../../components/icons";
 import Button from "../../components/Button";
 
-const ComponentWithStateAndHooks = () => {
+const ComponentsWithStateAndHooks = () => {
   
   let [count, setCount] = useState(0);
   const [isError, SetIsError] = useState(false);
@@ -155,4 +155,4 @@ const ComponentWithStateAndHooks = () => {
     </div>
   );
 };
-export default ComponentWithStateAndHooks;
+export default ComponentsWithStateAndHooks;

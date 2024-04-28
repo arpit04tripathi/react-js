@@ -8,7 +8,7 @@ import About from "./pages/About";
 
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ComponentsWithPropsAndComposition from "./pages/react-components/ComponentsWithPropsAndComposition";
-import ComponentWithStateAndHooks from "./pages/react-components/ComponentWithStateAndHooks";
+import ComponentsWithStateAndHooks from "./pages/react-components/ComponentsWithStateAndHooks";
 import FormValidation from "./pages/FormValidation";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
                 <Route path="" exact="true" element={<Home />}></Route>
                 <Route path="about" element={<About />}></Route>
                 <Route path="component-props" element={<ComponentsWithPropsAndComposition />}></Route>
-                <Route path="component-state" element={<ComponentWithStateAndHooks />}></Route>
+                <Route path="component-state" element={<ComponentsWithStateAndHooks />}></Route>
                 <Route path="form-validation" element={<FormValidation />}></Route>
               </Routes>
             </div>
