@@ -35,11 +35,12 @@ function Navbar() {
                 </button>
                 <ul className="dropdown-menu">
                   <NavItem label="Props" link="/component-props" />
-                  <NavItem label="State" link="/component-state" />
+                  <NavItem label="State" link="/component-state?name=arpit" />
                   <NavItemDivider />
                   <NavItem label="Something else here" link="/" />
                 </ul>
               </li>
+              <NavItem label="Form Validation" link="/form-validation?token=my-token-from-req-param&name=arpit" />
               <NavItem label="About" link="/about" />
               <NavItem label="Disabled" link="/" disabled />
             </ul>

@@ -5,6 +5,7 @@ const content = [
   { displayText: "Deploy to GitHub Pages", link: "https://blog.logrocket.com/deploying-react-apps-github-pages/" },
   { displayText: "React App To Github Pages", link: "https://www.youtube.com/watch?v=Q9n2mLqXFpU" },
   { displayText: "Router - Query Params", link: "https://www.basedash.com/blog/guide-to-react-router-query-params"},
+  { displayText: "axios", link: "https://blog.logrocket.com/how-to-make-http-requests-like-a-pro-with-axios/"},
 ];
 
 function Sidebar() {
