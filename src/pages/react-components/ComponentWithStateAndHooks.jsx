@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import AccordionItem from "../../components/AccordionItem";
 import Input from "../../components/Input";
 import {HomeIcon, PlusIcon} from '../../components/icons';
 import Button from '../../components/Button';
 
 const ComponentWithStateAndHooks = () => {
+  const query = new URLSearchParams(useLocation().search);
+
   let [count, setCount] = useState(0);
   const [isError, SetIsError] = useState(false);
   const [active, setActive] = useState(false);
@@ -54,6 +57,7 @@ const ComponentWithStateAndHooks = () => {
           </li>
         </ul>
       </header>
+      <div><p>PARAMS = {query.get("name")}</p></div>
       <div className="accordion" id="accordionExample">
         <AccordionItem itemId="One" parentId="accordionExample" heading="useState Hook and onClick" show>
           <span>
@@ -102,7 +106,6 @@ const ComponentWithStateAndHooks = () => {
         <AccordionItem itemId="Five" parentId="accordionExample" heading="Forwarding props to Wrapped elements">
           <div id="content">
             <Input type="text" placeholder="Your name" />
-            <Input type="text" value="Pre-filled as Arpit" placeholder="Your name" />
             <Input richText placeholder="Your message" />
           </div>
         </AccordionItem>
@@ -110,7 +113,7 @@ const ComponentWithStateAndHooks = () => {
           <section>
             <h2>Filled Button (Default)</h2>
             <p>
-              <Button>Default</Button>
+              <Button className="btn-secondary">Default</Button>
             </p>
             <p>
               <Button mode="filled">Filled (Default)</Button>
