@@ -1,110 +1,53 @@
 import { useLocation, useSearchParams } from "react-router-dom";
+import AccordionItem from "../components/AccordionItem";
+import RegistrationForm from "../features/RegisterationForm";
+import OTPVerificationForm from "../features/OTPVerificationForm";
 
 const FormValidation = () => {
   const query = new URLSearchParams(useLocation().search);
   console.log(`query params : ${query}`);
 
   const [searchParams, setSearchParams] = useSearchParams();
-
   const params = [];
-
   searchParams.forEach((value, key) => {
     params.push([key, value]);
   });
-
   console.log(params); // [["page", 5], ["pageSize", 25]]
 
   return (
     <div id="validate-forms">
-      <div id="router-params">
-        <div className="row">
-          <div className="col">
-            <pre>{JSON.stringify(process.env, null, 2)}</pre>
+      <div className="accordion" id="accordionExample">
+        <AccordionItem itemId="One" parentId="accordionExample" heading="Import Images and Text Randomization" show>
+          <div id="router-params">
+            <div className="row">
+              <div className="col">
+                <strong>process.env</strong>
+                <pre>{JSON.stringify(process.env, null, 2)}</pre>
+              </div>
+              <div className="col">
+                <pre><strong>query (json string)</strong>: {JSON.stringify(query, null, 2)}</pre>
+                <p>
+                  <strong>List all query params</strong> :
+                  <ul>
+                    {params.map(([key, value]) => (
+                      <li key={key}>
+                        {key} : {value}
+                      </li>
+                    ))}
+                  </ul>
+                </p>
+                <p><strong>query param "name"</strong> = {query.get("name")}</p>
+              </div>
+            </div>
           </div>
-          <div className="col">
-            <pre>{JSON.stringify(query, null, 2)}</pre>
-            <p>
-              query:{" "}
-              <ul>
-                {params.map(([key, value]) => (
-                  <li key={key}>
-                    {key} : {value}
-                  </li>
-                ))}
-              </ul>
-            </p>
-            <p>PARAMS = {query.get("name")}</p>
-          </div>
-        </div>
+        </AccordionItem>
+        <AccordionItem itemId="Two" parentId="accordionExample" heading="Registration Form">
+          <RegistrationForm />
+        </AccordionItem>
+        <AccordionItem itemId="Three" parentId="accordionExample" heading="OTP Verification Form">
+          <OTPVerificationForm />
+        </AccordionItem>
       </div>
-      <form className="row g-3 needs-validation" noValidate>
-        <div className="col-md-4">
-          <label htmlFor="validationCustom01" className="form-label">
-            First name
-          </label>
-          <input type="text" className="form-control" id="validationCustom01" value="Mark" required />
-          <div className="valid-feedback">Looks good!</div>
-        </div>
-        <div className="col-md-4">
-          <label htmlFor="validationCustom02" className="form-label">
-            Last name
-          </label>
-          <input type="text" className="form-control" id="validationCustom02" value="Otto" required />
-          <div className="valid-feedback">Looks good!</div>
-        </div>
-        <div className="col-md-4">
-          <label htmlFor="validationCustomUsername" className="form-label">
-            Username
-          </label>
-          <div className="input-group has-validation">
-            <span className="input-group-text" id="inputGroupPrepend">
-              @
-            </span>
-            <input type="text" className="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required />
-            <div className="invalid-feedback">Please choose a username.</div>
-          </div>
-        </div>
-        <div className="col-md-6">
-          <label htmlFor="validationCustom03" className="form-label">
-            City
-          </label>
-          <input type="text" className="form-control" id="validationCustom03" required />
-          <div className="invalid-feedback">Please provide a valid city.</div>
-        </div>
-        <div className="col-md-3">
-          <label htmlFor="validationCustom04" className="form-label">
-            State
-          </label>
-          <select className="form-select" id="validationCustom04" required>
-            <option selected disabled value="">
-              Choose...
-            </option>
-            <option>...</option>
-          </select>
-          <div className="invalid-feedback">Please select a valid state.</div>
-        </div>
-        <div className="col-md-3">
-          <label htmlFor="validationCustom05" className="form-label">
-            Zip
-          </label>
-          <input type="text" className="form-control" id="validationCustom05" required />
-          <div className="invalid-feedback">Please provide a valid zip.</div>
-        </div>
-        <div className="col-12">
-          <div className="form-check">
-            <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required />
-            <label className="form-check-label" htmlFor="invalidCheck">
-              Agree to terms and conditions
-            </label>
-            <div className="invalid-feedback">You must agree before submitting.</div>
-          </div>
-        </div>
-        <div className="col-12">
-          <button className="btn btn-primary" type="submit">
-            Submit form
-          </button>
-        </div>
-      </form>
     </div>
   );
 };
