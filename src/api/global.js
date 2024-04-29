@@ -8,15 +8,19 @@ const myAxios = axios.create({
   timeoutErrorMessage: "Timeout for axios - Arpit",
 });
 
+function logReponse(response) {
+  console.log(response.data);
+  console.log(response.status);
+  console.log(response.statusText);
+  console.log(response.headers);
+  console.log(response.config);
+}
+
 // GET	/posts
 export const getAllPosts = async () => {
   try {
     const response = await myAxios.get("/posts");
-    console.log(response.data);
-    console.log(response.status);
-    console.log(response.statusText);
-    console.log(response.headers);
-    console.log(response.config);
+    logReponse(response);
     return response.data;
   } catch (error) {
     // Handle error
@@ -25,8 +29,15 @@ export const getAllPosts = async () => {
 }
 
 // GET	/posts/1
-const getPostById = (id) => {
-  return {};
+export const getPostById = async (id) => {
+  try {
+    const response = await myAxios.get(`/posts/${id}`);
+    // logReponse(response);
+    return response.data;
+  } catch (error) {
+    // Handle error
+    console.error(error);
+  }
 };
 
 // POST	/posts
