@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[50309],{50309:e=>{e.exports=JSON.parse('[{"id":65178,"name":"Sandy Point Town","latitude":"17.35908000","longitude":"-62.84858000"}]')}}]);

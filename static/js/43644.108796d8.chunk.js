@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[43644],{43644:e=>{e.exports=JSON.parse('[{"id":104220,"name":"Pesnica pri Mariboru","latitude":"46.60694000","longitude":"15.67667000"}]')}}]);

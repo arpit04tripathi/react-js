@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[811942],{811942:e=>{e.exports=JSON.parse('[{"id":104304,"name":"Turni\u0161\u010de","latitude":"46.62778000","longitude":"16.32028000"}]')}}]);

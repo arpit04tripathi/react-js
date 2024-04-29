@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[577503],{577503:e=>{e.exports=JSON.parse('[{"id":104256,"name":"Ribnica na Pohorju","latitude":"46.53500000","longitude":"15.27278000"}]')}}]);

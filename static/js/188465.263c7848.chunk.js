@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[188465],{188465:e=>{e.exports=JSON.parse('[{"id":104264,"name":"Selnica ob Dravi","latitude":"46.55000000","longitude":"15.49500000"}]')}}]);

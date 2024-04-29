@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[669375],{669375:e=>{e.exports=JSON.parse('[{"id":65170,"name":"Dieppe Bay Town","latitude":"17.41473000","longitude":"-62.81390000"}]')}}]);

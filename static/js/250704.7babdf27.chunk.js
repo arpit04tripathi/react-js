@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[250704],{250704:e=>{e.exports=JSON.parse('[{"id":8,"name":"Sant Juli\xe0 de L\xf2ria","latitude":"42.46372000","longitude":"1.49129000"}]')}}]);

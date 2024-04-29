@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[287996],{287996:e=>{e.exports=JSON.parse('[{"id":31577,"name":"Santo Domingo de los Colorados","latitude":"-0.25305000","longitude":"-79.17536000"}]')}}]);

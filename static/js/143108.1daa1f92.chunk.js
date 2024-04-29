@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[143108],{143108:e=>{e.exports=JSON.parse('[{"id":104714,"name":"Goudomp Department","latitude":"12.57778000","longitude":"-15.87222000"},{"id":104760,"name":"S\xe9dhiou","latitude":"12.70806000","longitude":"-15.55694000"}]')}}]);

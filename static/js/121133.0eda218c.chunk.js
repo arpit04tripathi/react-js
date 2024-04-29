@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[121133],{121133:e=>{e.exports=JSON.parse('[{"id":104310,"name":"Videm pri Ptuju","latitude":"46.36861000","longitude":"15.90639000"}]')}}]);

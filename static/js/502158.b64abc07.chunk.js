@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[502158],{502158:e=>{e.exports=JSON.parse('[{"id":21990,"name":"Cova Figueira","latitude":"14.89054000","longitude":"-24.29343000"}]')}}]);

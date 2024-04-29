@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[255248],{255248:e=>{e.exports=JSON.parse('[{"id":53807,"name":"Bafat\xe1","latitude":"12.16583000","longitude":"-14.66167000"},{"id":53815,"name":"Contuboel Sector","latitude":"12.55500000","longitude":"-14.64100000"}]')}}]);

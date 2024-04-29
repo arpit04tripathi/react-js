@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[166999],{166999:e=>{e.exports=JSON.parse('[{"id":89713,"name":"Sonsorol Village","latitude":"5.32608000","longitude":"132.21943000"}]')}}]);

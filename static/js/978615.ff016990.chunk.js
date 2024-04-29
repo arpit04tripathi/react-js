@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[978615],{978615:e=>{e.exports=JSON.parse('[{"id":1,"name":"Andorra la Vella","latitude":"42.50779000","longitude":"1.52109000"}]')}}]);

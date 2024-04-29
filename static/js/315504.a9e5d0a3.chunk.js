@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[315504],{315504:a=>{a.exports=JSON.parse('[{"id":43,"name":"Ras Al Khaimah","latitude":"25.46116000","longitude":"56.04058000"},{"id":44,"name":"Ras Al Khaimah City","latitude":"25.78953000","longitude":"55.94320000"}]')}}]);

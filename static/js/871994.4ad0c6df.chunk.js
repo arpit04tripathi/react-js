@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[871994],{871994:e=>{e.exports=JSON.parse('[{"id":104829,"name":"Nieuw Nickerie","latitude":"5.92606000","longitude":"-56.97297000"},{"id":104833,"name":"Wageningen","latitude":"5.76010000","longitude":"-56.66523000"}]')}}]);

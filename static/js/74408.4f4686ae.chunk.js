@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[74408],{74408:e=>{e.exports=JSON.parse('[{"id":89714,"name":"Tobi Village","latitude":"3.00488000","longitude":"131.12168000"}]')}}]);

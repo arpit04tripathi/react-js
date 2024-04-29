@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[427295],{427295:e=>{e.exports=JSON.parse('[{"id":104067,"name":"Bistrica ob Sotli","latitude":"46.05889000","longitude":"15.66417000"}]')}}]);

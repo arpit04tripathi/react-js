@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[979960],{979960:e=>{e.exports=JSON.parse('[{"id":109005,"name":"Chiayi County","latitude":"23.46333000","longitude":"120.58166000"}]')}}]);

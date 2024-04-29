@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[153520],{153520:e=>{e.exports=JSON.parse('[{"id":65939,"name":"Caza de Aakkar","latitude":"34.53333000","longitude":"36.16667000"}]')}}]);

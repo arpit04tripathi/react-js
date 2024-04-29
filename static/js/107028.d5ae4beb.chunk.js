@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[107028],{107028:e=>{e.exports=JSON.parse('[{"id":64961,"name":"Krong Kep","latitude":"10.48291000","longitude":"104.31672000"},{"id":65000,"name":"Sr\u014fk D\xe2mn\u0103k Ch\xe2ng\u2019aeur","latitude":"10.53394000","longitude":"104.34855000"}]')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[416638],{416638:e=>{e.exports=JSON.parse('[{"id":108980,"name":"Point Fortin","latitude":"10.17411000","longitude":"-61.68407000"}]')}}]);

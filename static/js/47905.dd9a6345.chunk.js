@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[47905],{47905:e=>{e.exports=JSON.parse('[{"id":89736,"name":"Capit\xe1n Pablo Lagerenza","latitude":"-19.91667000","longitude":"-60.78333000"},{"id":89768,"name":"Fuerte Olimpo","latitude":"-21.04153000","longitude":"-57.87377000"}]')}}]);

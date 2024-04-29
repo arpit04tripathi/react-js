@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[854485],{854485:e=>{e.exports=JSON.parse('[{"id":104124,"name":"Ilirska Bistrica","latitude":"45.56757000","longitude":"14.24571000"}]')}}]);

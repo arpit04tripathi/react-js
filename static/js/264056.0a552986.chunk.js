@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[264056],{264056:e=>{e.exports=JSON.parse('[{"id":52031,"name":"Saint David\u2019s","latitude":"12.04903000","longitude":"-61.66875000"}]')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[129624],{129624:e=>{e.exports=JSON.parse('[{"id":153351,"name":"San Fernando de Apure","latitude":"7.87266930","longitude":"-67.48193280"}]')}}]);

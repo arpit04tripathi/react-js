@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[953433],{953433:e=>{e.exports=JSON.parse('[{"id":104699,"name":"Poggio di Chiesanuova","latitude":"43.90451000","longitude":"12.42142000"}]')}}]);

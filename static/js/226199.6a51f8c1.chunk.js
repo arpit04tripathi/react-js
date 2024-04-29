@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[226199],{226199:e=>{e.exports=JSON.parse('[{"id":109011,"name":"Hsinchu County","latitude":"24.67416000","longitude":"121.16111000"}]')}}]);

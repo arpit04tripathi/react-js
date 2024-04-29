@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[559443],{559443:e=>{e.exports=JSON.parse('[{"id":31189,"name":"San Jos\xe9 de Ocoa","latitude":"18.54661000","longitude":"-70.50631000"}]')}}]);

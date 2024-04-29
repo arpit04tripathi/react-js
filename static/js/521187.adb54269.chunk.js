@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[521187],{521187:e=>{e.exports=JSON.parse('[{"id":104328,"name":"Zgornja Kungota","latitude":"46.63917000","longitude":"15.61556000"}]')}}]);

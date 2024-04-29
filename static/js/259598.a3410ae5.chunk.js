@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[259598],{259598:e=>{e.exports=JSON.parse('[{"id":104292,"name":"Sveti Toma\u017e","latitude":"46.48417000","longitude":"16.08361000"}]')}}]);

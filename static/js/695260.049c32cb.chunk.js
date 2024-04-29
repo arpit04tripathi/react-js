@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[695260],{695260:e=>{e.exports=JSON.parse('[{"id":109001,"name":"Toga Village","latitude":"-6.28764000","longitude":"176.31472000"}]')}}]);

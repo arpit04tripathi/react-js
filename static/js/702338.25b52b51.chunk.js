@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_js=self.webpackChunkreact_js||[]).push([[702338],{702338:e=>{e.exports=JSON.parse('[{"id":104363,"name":"\u0160tore","latitude":"46.22083000","longitude":"15.31389000"}]')}}]);
