@@ -20,6 +20,13 @@ const Countries = () => {
     setCountry(value);
   };
 
+  const listOfReferences = [
+    { label: "react-country-flag", link: "https://www.npmjs.com/package/react-country-flag" },
+    { label: "react-country-list", link: "https://www.npmjs.com/package/react-country-list" },
+    { label: "react-country-phone-input", link: "https://www.npmjs.com/package/react-country-phone-input" },
+    { label: "react-phone-number-input", link: "https://www.npmjs.com/package/react-phone-number-input" },
+  ];
+
   return (
     <div id="countries">
       <h1>Countries</h1>
@@ -80,8 +87,16 @@ const Countries = () => {
             <ReactCountryFlag countryCode="US" svg cdnUrl="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/" cdnSuffix="svg" title="US" />
           </div>
         </AccordionItem>
-        <AccordionItem itemId="Two" parentId="accordionExample" heading="react-country-phone-input">
-          {/* <PhoneInput>Phone</PhoneInput> */}
+        <AccordionItem itemId="Three" parentId="accordionExample" heading="Other Libraries available">
+          <ul>
+            {listOfReferences.map(({label, link}) => (
+              <li>
+                <a href={link} target="_blank" rel="noopener noreferrer">
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </AccordionItem>
       </div>
     </div>
