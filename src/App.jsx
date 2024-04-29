@@ -10,6 +10,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ComponentsWithPropsAndComposition from "./pages/react-components/ComponentsWithPropsAndComposition";
 import ComponentsWithStateAndHooks from "./pages/react-components/ComponentsWithStateAndHooks";
 import FormValidation from "./pages/FormValidation";
+import Countries from "./pages/Countries";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
                 <Route path="component-props" element={<ComponentsWithPropsAndComposition />}></Route>
                 <Route path="component-state" element={<ComponentsWithStateAndHooks />}></Route>
                 <Route path="form-validation" element={<FormValidation />}></Route>
+                <Route path="countiries" element={<Countries />}></Route>
               </Routes>
             </div>
           </div>

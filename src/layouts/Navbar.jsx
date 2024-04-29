@@ -41,6 +41,7 @@ function Navbar() {
                 </ul>
               </li>
               <NavItem label="Form Validation" link="/form-validation?token=my-token-from-req-param&name=arpit" />
+              <NavItem label="Countries" link="/countiries"/>
               <NavItem label="About" link="/about" />
               <NavItem label="Disabled" link="/" disabled />
             </ul>
