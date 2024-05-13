@@ -12,7 +12,7 @@ const OTPVerificationForm = () => {
 
   return (
     <div id="otp-verification">
-      <h1>OTP Verification Form</h1>
+      {/* <h1>Axios - GET from jsonplaceholder</h1> */}
       <button onClick={updatePost} className="btn btn-success">
         Get Me a random Post
       </button>

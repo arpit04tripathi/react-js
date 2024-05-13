@@ -17,7 +17,7 @@ const FormValidation = () => {
   return (
     <div id="validate-forms">
       <div className="accordion" id="accordionExample">
-        <AccordionItem itemId="One" parentId="accordionExample" heading="Import Images and Text Randomization" show>
+        <AccordionItem itemId="One" parentId="accordionExample" heading="env file values and route query params" show>
           <div id="router-params">
             <div className="row">
               <div className="col">
@@ -44,7 +44,7 @@ const FormValidation = () => {
         <AccordionItem itemId="Two" parentId="accordionExample" heading="Registration Form">
           <RegistrationForm />
         </AccordionItem>
-        <AccordionItem itemId="Three" parentId="accordionExample" heading="OTP Verification Form">
+        <AccordionItem itemId="Three" parentId="accordionExample" heading="Axios - GET from jsonplaceholder (PUBLIC API)">
           <OTPVerificationForm />
         </AccordionItem>
       </div>
