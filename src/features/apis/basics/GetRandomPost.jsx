@@ -1,7 +1,7 @@
 import { useState } from "react";
-import * as postsApi from "../api/global";
+import * as postsApi from "../../../api/global";
 
-const OTPVerificationForm = () => {
+const GetRandomPost = () => {
   const [post, setPost] = useState({a: "b"});
 
   async function updatePost() {
@@ -21,4 +21,4 @@ const OTPVerificationForm = () => {
   );
 };
 
-export default OTPVerificationForm;
+export default GetRandomPost;

@@ -1,4 +1,5 @@
 import * as URL from "../data/url";
+import PATHS from '../data/paths';
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -31,17 +32,58 @@ function Navbar() {
               </li>
               <li className="nav-item dropdown py-2">
                 <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  React Components
+                  Basics
                 </button>
                 <ul className="dropdown-menu">
-                  <NavItem label="Props" link="/component-props" />
-                  <NavItem label="State" link="/component-state?name=arpit" />
+                  <NavItem label="Props" link={PATHS.BASICS_COMPONENTS} />
+                  <NavItem label="State" link={PATHS.BASICS_STATE + "?name=arpit"} />
                   <NavItemDivider />
-                  <NavItem label="Something else here" link="/" />
+                  <NavItem label="Something" link="/" />
                 </ul>
               </li>
-              <NavItem label="Form Validation" link="/form-validation?token=my-token-from-req-param&name=arpit" />
-              <NavItem label="Countries" link="/countiries"/>
+              <li className="nav-item dropdown py-2">
+                <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Forms
+                </button>
+                <ul className="dropdown-menu">
+                  <NavItem label="Basics" link={PATHS.FORMS_BASICS} />
+                  <NavItem label="Form Validation" link="/form-validation?token=my-token-from-req-param&name=arpit" />
+                  <NavItemDivider />
+                  <NavItem label="Countries" link="/countiries"/>
+                </ul>
+              </li>
+              <li className="nav-item dropdown py-2">
+                <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Routes
+                </button>
+                <ul className="dropdown-menu">
+                  <NavItem label="Basic" link={PATHS.ROUTES_BASICS + "?token=my-token-from-req-param&name=arpit"} />
+                  <NavItemDivider />
+                  <NavItem label="Something" link="/" />
+                </ul>
+              </li>
+
+              <li className="nav-item dropdown py-2">
+                <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  API
+                </button>
+                <ul className="dropdown-menu">
+                  <NavItem label="Basic" link="/api/basics" />
+                  <NavItemDivider />
+                  <NavItem label="Something" link="/" />
+                </ul>
+              </li>
+
+              <li className="nav-item dropdown py-2">
+                <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Env
+                </button>
+                <ul className="dropdown-menu">
+                  <NavItem label="Basic" link={PATHS.ENV_BASICS} />
+                  <NavItemDivider />
+                  <NavItem label="Something" link="/" />
+                </ul>
+              </li>
               <NavItem label="About" link="/about" />
               <NavItem label="Disabled" link="/" disabled />
             </ul>
