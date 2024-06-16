@@ -21,10 +21,10 @@ const Countries = () => {
   };
 
   const listOfReferences = [
+    { label: "react-phone-number-input", link: "https://www.npmjs.com/package/react-phone-number-input" , available: true},
     { label: "react-country-flag", link: "https://www.npmjs.com/package/react-country-flag" },
     { label: "react-country-list", link: "https://www.npmjs.com/package/react-country-list" },
     { label: "react-country-phone-input", link: "https://www.npmjs.com/package/react-country-phone-input" },
-    { label: "react-phone-number-input", link: "https://www.npmjs.com/package/react-phone-number-input" },
   ];
 
   return (
@@ -89,11 +89,11 @@ const Countries = () => {
         </AccordionItem>
         <AccordionItem itemId="Three" parentId="accordionExample" heading="Other Libraries available">
           <ul>
-            {listOfReferences.map(({label, link}) => (
+            {listOfReferences.map(({label, link, available}) => (
               <li>
                 <a href={link} target="_blank" rel="noopener noreferrer">
                   {label}
-                </a>
+                </a> {available && <span>available</span>}
               </li>
             ))}
           </ul>
