@@ -46,6 +46,12 @@ function App() {
                   path={PATHS.FORMS_BASICS}
                   element={<FormsBasics />}
                 ></Route>
+                <Route
+                  path="form-validation"
+                  element={<FormValidation />}
+                ></Route>
+
+                <Route path="countiries" element={<Countries />}></Route>
                 {/* Pages - Routes */}
                 <Route
                   path={PATHS.ROUTES_BASICS}
@@ -54,16 +60,7 @@ function App() {
                 {/* Pages - API */}
                 <Route path="api/basics" element={<ApiBasics />}></Route>
                 {/* Pages - Environment */}
-                <Route
-                  path={PATHS.ENV_BASICS}
-                  element={<EnvBasics />}
-                ></Route>
-
-                <Route
-                  path="form-validation"
-                  element={<FormValidation />}
-                ></Route>
-                <Route path="countiries" element={<Countries />}></Route>
+                <Route path={PATHS.ENV_BASICS} element={<EnvBasics />}></Route>
                 <Route path="about" element={<About />}></Route>
               </Routes>
             </div>

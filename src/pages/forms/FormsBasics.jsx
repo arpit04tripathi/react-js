@@ -16,9 +16,9 @@ function FormsBasics() {
       </header>
       <div className="accordion" id={ACCORDION_PARENT}>
         <AccordionItem
-          itemId="get-random"
+          itemId="accordion-registration-form"
           parentId={ACCORDION_PARENT}
-          heading="Axios - GET from jsonplaceholder (PUBLIC API)"
+          heading="Registration Form"
           show
         >
           <RegistrationForm />
