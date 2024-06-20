@@ -32,6 +32,7 @@ function App() {
               <Routes>
                 {/* Pages - Home */}
                 <Route path="" exact="true" element={<Home />}></Route>
+
                 {/* Pages - Basics */}
                 <Route
                   path={PATHS.BASICS_COMPONENTS}
@@ -41,26 +42,33 @@ function App() {
                   path={PATHS.BASICS_STATE}
                   element={<ComponentsWithStateAndHooks />}
                 ></Route>
+
                 {/* Pages - Forms */}
                 <Route
                   path={PATHS.FORMS_BASICS}
                   element={<FormsBasics />}
                 ></Route>
                 <Route
-                  path="form-validation"
+                  path={PATHS.FORMS_VALIDATION}
                   element={<FormValidation />}
                 ></Route>
+                <Route
+                  path={PATHS.FORMS_COUNTRIES}
+                  element={<Countries />}
+                ></Route>
 
-                <Route path="countiries" element={<Countries />}></Route>
                 {/* Pages - Routes */}
                 <Route
                   path={PATHS.ROUTES_BASICS}
                   element={<RoutesBasics />}
                 ></Route>
+
                 {/* Pages - API */}
-                <Route path="api/basics" element={<ApiBasics />}></Route>
+                <Route path={PATHS.APIS_BASICS} element={<ApiBasics />}></Route>
+
                 {/* Pages - Environment */}
                 <Route path={PATHS.ENV_BASICS} element={<EnvBasics />}></Route>
+
                 <Route path="about" element={<About />}></Route>
               </Routes>
             </div>
