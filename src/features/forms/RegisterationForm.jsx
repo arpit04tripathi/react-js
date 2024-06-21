@@ -3,7 +3,7 @@ import { useState } from "react";
 const RegisterationForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",
-    latName: "",
+    lastName: "",
     username: "",
     city: "",
     state: "",
@@ -22,6 +22,7 @@ const RegisterationForm = () => {
       ...formData,
       [name]: value
     });
+
     delete errors[name];
     setErrors({...errors})
   };
@@ -36,9 +37,9 @@ const RegisterationForm = () => {
       isValid = false;
     }
 
-    // Validate latName
-    if (!formData.latName) {
-      newErrors.latName = "latName is required";
+    // Validate lastName
+    if (!formData.lastName) {
+      newErrors.lastName = "lastName is required";
       isValid = false;
     }
 
@@ -112,9 +113,9 @@ const RegisterationForm = () => {
           <label htmlFor="validationCustom02" className="form-label">
             Last name
           </label>
-          <input type="text" className="form-control" id="validationCustom02" placeholder="Otto" name="latName" onChange={handleInputChange} required />
+          <input type="text" className="form-control" id="validationCustom02" placeholder="Otto" name="lastName" onChange={handleInputChange} required />
           <div className="valid-feedback">Looks good!</div>
-          {errors.latName && <div className="error">{errors.latName}</div>}
+          {errors.lastName && <div className="error">{errors.lastName}</div>}
         </div>
         <div className="col-md-4">
           <label htmlFor="validationCustomUsername" className="form-label">
