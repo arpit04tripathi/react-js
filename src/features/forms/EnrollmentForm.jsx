@@ -77,10 +77,15 @@ function EnrollmentForm() {
 	};
 
 	const removeContact = (index) => {
-    // formData.contacts.splice(index, 1);
-    // setFormData({
-    //   ...formData,
-    // });
+    const contacts = formData.contacts;
+    console.log(index);
+    console.log(contacts);
+    contacts.splice(index, 1);
+    formData.contacts = contacts;
+
+    setFormData({
+      ...formData,
+    });
   };
 
 	const validateForm = () => {
@@ -252,7 +257,7 @@ function EnrollmentForm() {
 									{rowIndex === 0 ? (
 										<i className="bi bi-plus-circle" onClick={addContact} />
 									) : (
-										<i className="bi bi-x-circle" onClick={removeContact(rowIndex)} />
+										<i className="bi bi-x-circle" onClick={e => removeContact(rowIndex)} />
 									)}
 								</p>
 							</div>
