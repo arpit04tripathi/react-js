@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { getCountries } from "react-phone-number-input";
 
 const countries = [
 	{
@@ -16,7 +15,6 @@ const countries = [
 	},
 ];
 
-const c = getCountries();
 const allAllowedPhoneTypes = [
 	{ value: "cell", name: "Cell Phone" },
 	{ value: "home", name: "Home Phone" },
@@ -41,7 +39,7 @@ function EnrollmentForm() {
 	const [submitted, setSubmitted] = useState(false);
 
 	const handleInputChange = (e) => {
-		console.log(e);
+		console.log('handleInputChange', e);
 		let { name, value } = e.target;
 		if (e.target.type === "checkbox") {
 			value = e.target.checked;
@@ -60,12 +58,11 @@ function EnrollmentForm() {
 		const { name, value } = e.target;
 		let contact = formData.contacts[index];
 		contact[name] = value;
-		console.log(contact);
 		setFormData({
 			...formData,
 		});
 
-		console.log(formData.contacts);
+		console.log("handleInputChangeForContacts", contact, formData.contacts);
 	};
 
 	const addContact = () => {
@@ -84,8 +81,7 @@ function EnrollmentForm() {
 
 	const removeContact = (index) => {
 		const contacts = formData.contacts;
-		console.log(index);
-		console.log(contacts);
+		console.log("removeContact", index, contacts);
 		contacts.splice(index, 1);
 		formData.contacts = contacts;
 
@@ -102,6 +98,7 @@ function EnrollmentForm() {
 		isValid = validateContacts(newErrors) && isValid;
 		isValid = validateTermsAgreed(newErrors) && isValid;
 		setErrors(newErrors);
+		console.log('newErrors', newErrors, "errors", errors);
 		return isValid;
 	};
 
@@ -140,24 +137,28 @@ function EnrollmentForm() {
 
 	const validateContacts = (newErrors) => {
 		const CONTACTS_ERROR_EMPTY = [{}, {}, {}];
-		newErrors.contacts = CONTACTS_ERROR_EMPTY;
+		newErrors.contacts = [...CONTACTS_ERROR_EMPTY];
 		const selectedPhoneTypes = new Set([]);
 		formData.contacts.map((contact, index) => {
-			if (index > 0 && (formData.contacts!==contact.countryCode)) {
-				newErrors.contacts[index].countryCode = `Can select only one country code.`
+			if (index > 0 && formData.contacts !== contact.countryCode) {
+				newErrors.contacts[index].countryCode = `Can select only one country code.`;
 			}
 
 			if (contact.phone === "") {
-				newErrors.contacts[index].phone = "Phone Number cannot be empty"
+				newErrors.contacts[index].phone = "Phone Number cannot be empty";
 			}
 
+			if (selectedPhoneTypes.has(contact.type)) {
+				newErrors.contacts[index].type = `Only one phone number allowed of type ${contact.type}`;
+			}
 			selectedPhoneTypes.add(contact.type);
-			if(selectedPhoneTypes.has(contact.type)) {newErrors.contacts[index].type = `Only one phone number allowed of type ${contact.type}`}
-			console.log(index, contact);
-		})
-		console.log(newErrors);
-		console.log(newErrors.contacts);
-		if(CONTACTS_ERROR_EMPTY === newErrors.contacts) {
+			// console.log('validateContacts', index, contact);
+		});
+		console.log('validateContacts: newErrors.contacts', newErrors.contacts);
+		console.log('CONTACTS_ERROR_EMPTY', CONTACTS_ERROR_EMPTY)
+		const flag = (CONTACTS_ERROR_EMPTY === newErrors.contacts)
+		console.log('remove newErrors.contacts', flag);
+		if (flag) {
 			delete newErrors.contacts;
 		}
 	};
@@ -167,7 +168,7 @@ function EnrollmentForm() {
 
 		if (validateForm()) {
 			// Form is valid, you can submit or process the data here
-			console.log("Form data:", formData);
+			console.log("Form data", formData);
 			setSubmitted(true); // Set a submitted flag
 		} else {
 			// Form is not valid, display error messages
@@ -186,7 +187,6 @@ function EnrollmentForm() {
 					formData : <pre>{JSON.stringify(formData, null, 2)}</pre>
 				</div>
 			</div>
-			<div>{c}</div>
 			<form className="row g-3" noValidate>
 				{/* row - name */}
 				<div className="col-md-6">
@@ -240,7 +240,7 @@ function EnrollmentForm() {
 				</div>
 
 				{/* row - phone numbers */}
-				{formData.contacts.map((item, rowIndex) => {
+				{formData.contacts.map((currectCountry, rowIndex) => {
 					return (
 						<div className="row" key={"row-" + rowIndex}>
 							<div className="col-md-2">
@@ -248,10 +248,10 @@ function EnrollmentForm() {
 									Country
 								</label>
 								<select
-									className="form-select"
+									className={`form-select ${errors.contacts && errors.contacts[rowIndex]?.countryCode && "is-invalid"}`}
 									id={`countryCode-${rowIndex}`}
 									name="countryCode"
-									defaultValue={"US"}
+									value={currectCountry.countryCode}
 									onChange={(e) => handleInputChangeForContacts(rowIndex, e)}
 									required>
 									{countries.map((country, countryIndex) => {
@@ -262,7 +262,7 @@ function EnrollmentForm() {
 										);
 									})}
 								</select>
-								<div className="invalid-feedback">Please select a valid state.</div>
+								<div className="invalid-feedback">{errors.contacts && errors.contacts[rowIndex]?.countryCode}</div>
 							</div>
 							<div className="col-md-6">
 								<label htmlFor="validationCustom03" className="form-label">
@@ -270,21 +270,27 @@ function EnrollmentForm() {
 								</label>
 								<input
 									type="number"
-									className="form-control"
+									className={`form-control ${errors.contacts && errors.contacts[rowIndex]?.phone && "is-invalid"}`}
 									id={`phone-${rowIndex}`}
 									index={rowIndex}
-									defaultValue={item.phone}
+									value={currectCountry.phone}
 									name="phone"
 									onChange={(e) => handleInputChangeForContacts(rowIndex, e)}
 									required
 								/>
-								<div className="invalid-feedback">Please provide a valid phone.</div>
+								<div className="invalid-feedback">{errors.contacts && errors.contacts[rowIndex]?.phone}</div>
 							</div>
 							<div className="col-md-3">
 								<label htmlFor={`phoneType-${rowIndex}`} className="form-label">
 									Type
 								</label>
-								<select className="form-select" id={`phoneType-${rowIndex}`} name="type" onChange={(e) => handleInputChangeForContacts(rowIndex, e)} required>
+								<select
+									className={`form-select ${errors.contacts && errors.contacts[rowIndex]?.type && "is-invalid"}`}
+									id={`phoneType-${rowIndex}`}
+									name="type"
+									onChange={(e) => handleInputChangeForContacts(rowIndex, e)}
+									value={currectCountry.type}
+									required>
 									{allAllowedPhoneTypes.map((phoneType, phoneTypeIndex) => {
 										return (
 											<option key={`${rowIndex}-${phoneTypeIndex}`} value={phoneType.value}>
@@ -293,7 +299,7 @@ function EnrollmentForm() {
 										);
 									})}
 								</select>
-								<div className="invalid-feedback">Please provide a type.</div>
+								<div className="invalid-feedback">{errors.contacts && errors.contacts[rowIndex]?.type}</div>
 							</div>
 							<div className="col-md-1">
 								<label htmlFor={`button-${rowIndex}`} className="form-label"></label>
