@@ -140,7 +140,7 @@ function EnrollmentForm() {
 		newErrors.contacts = [...CONTACTS_ERROR_EMPTY];
 		const selectedPhoneTypes = new Set([]);
 		formData.contacts.map((contact, index) => {
-			if (index > 0 && formData.contacts !== contact.countryCode) {
+			if (index > 0 && formData.contacts[0].countryCode !== contact.countryCode) {
 				newErrors.contacts[index].countryCode = `Can select only one country code.`;
 			}
 
