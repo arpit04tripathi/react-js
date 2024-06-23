@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getCountries } from "react-phone-number-input";
 
 const countries = [
 	{
@@ -14,10 +15,12 @@ const countries = [
 		name: "United Kingdom",
 	},
 ];
+
+const c = getCountries();
 const allAllowedPhoneTypes = [
 	{ value: "cell", name: "Cell Phone" },
 	{ value: "home", name: "Home Phone" },
-	{ value: "home", name: "Work Phone" },
+	{ value: "work", name: "Work Phone" },
 ];
 
 function EnrollmentForm() {
@@ -29,7 +32,7 @@ function EnrollmentForm() {
 			{
 				countryCode: "US",
 				phone: "1234567890",
-				type: "",
+				type: "home",
 			},
 		],
 		termsAgreed: false,
@@ -39,7 +42,10 @@ function EnrollmentForm() {
 
 	const handleInputChange = (e) => {
 		console.log(e);
-		const { name, value } = e.target;
+		let { name, value } = e.target;
+		if (e.target.type === "checkbox") {
+			value = e.target.checked;
+		}
 
 		setFormData({
 			...formData,
@@ -63,35 +69,44 @@ function EnrollmentForm() {
 	};
 
 	const addContact = () => {
-    if(formData.contacts.length < 3) {
-      formData.contacts.push({
-        countryCode: "US",
-        phone: "4684",
-        type: "",
-      });
+		if (formData.contacts.length < 3) {
+			formData.contacts.push({
+				countryCode: "US",
+				phone: "4684",
+				type: "cell",
+			});
 
-      setFormData({
-        ...formData,
-      });
-    }
+			setFormData({
+				...formData,
+			});
+		}
 	};
 
 	const removeContact = (index) => {
-    const contacts = formData.contacts;
-    console.log(index);
-    console.log(contacts);
-    contacts.splice(index, 1);
-    formData.contacts = contacts;
+		const contacts = formData.contacts;
+		console.log(index);
+		console.log(contacts);
+		contacts.splice(index, 1);
+		formData.contacts = contacts;
 
-    setFormData({
-      ...formData,
-    });
-  };
+		setFormData({
+			...formData,
+		});
+	};
 
 	const validateForm = () => {
 		let isValid = true;
 		const newErrors = {};
+		isValid = validateFirstAndLastName(newErrors) && isValid;
+		isValid = validateEmail(newErrors) && isValid;
+		isValid = validateContacts(newErrors) && isValid;
+		isValid = validateTermsAgreed(newErrors) && isValid;
+		setErrors(newErrors);
+		return isValid;
+	};
 
+	const validateFirstAndLastName = (newErrors) => {
+		let isValid = true;
 		// Validate firstName
 		if (!formData.firstName) {
 			newErrors.firstName = "firstName is required";
@@ -103,21 +118,48 @@ function EnrollmentForm() {
 			newErrors.lastName = "lastName is required";
 			isValid = false;
 		}
-
-		// Validate username
+		return isValid;
+	};
+	const validateEmail = (newErrors) => {
+		// Validate email
 		if (!formData.email) {
 			newErrors.email = "email is required";
-			isValid = false;
+			return false;
 		}
+		return true;
+	};
 
+	const validateTermsAgreed = (newErrors) => {
 		// Validate termsAgreed
 		if (!formData.termsAgreed) {
 			newErrors.termsAgreed = "termsAgreed is required";
-			isValid = false;
+			return false;
 		}
+		return true;
+	};
 
-		setErrors(newErrors);
-		return isValid;
+	const validateContacts = (newErrors) => {
+		const CONTACTS_ERROR_EMPTY = [{}, {}, {}];
+		newErrors.contacts = CONTACTS_ERROR_EMPTY;
+		const selectedPhoneTypes = new Set([]);
+		formData.contacts.map((contact, index) => {
+			if (index > 0 && (formData.contacts!==contact.countryCode)) {
+				newErrors.contacts[index].countryCode = `Can select only one country code.`
+			}
+
+			if (contact.phone === "") {
+				newErrors.contacts[index].phone = "Phone Number cannot be empty"
+			}
+
+			selectedPhoneTypes.add(contact.type);
+			if(selectedPhoneTypes.has(contact.type)) {newErrors.contacts[index].type = `Only one phone number allowed of type ${contact.type}`}
+			console.log(index, contact);
+		})
+		console.log(newErrors);
+		console.log(newErrors.contacts);
+		if(CONTACTS_ERROR_EMPTY === newErrors.contacts) {
+			delete newErrors.contacts;
+		}
 	};
 
 	const handleSubmit = (e) => {
@@ -144,6 +186,7 @@ function EnrollmentForm() {
 					formData : <pre>{JSON.stringify(formData, null, 2)}</pre>
 				</div>
 			</div>
+			<div>{c}</div>
 			<form className="row g-3" noValidate>
 				{/* row - name */}
 				<div className="col-md-6">
@@ -204,19 +247,20 @@ function EnrollmentForm() {
 								<label htmlFor="validationCustom04" className="form-label">
 									Country
 								</label>
-								<select className="form-select" id="validationCustom04" required>
-									<option disabled value="">
-										{" "}
-										Choose...{" "}
-									</option>
+								<select
+									className="form-select"
+									id={`countryCode-${rowIndex}`}
+									name="countryCode"
+									defaultValue={"US"}
+									onChange={(e) => handleInputChangeForContacts(rowIndex, e)}
+									required>
 									{countries.map((country, countryIndex) => {
 										return (
-											<option key={rowIndex + "-" + countryIndex} defaultValue={country.code === "US"} value={country.code}>
-												{country.name}
+											<option key={rowIndex + "-" + countryIndex} value={country.code}>
+												{country.name} - {country.code}
 											</option>
 										);
 									})}
-									<option>...</option>
 								</select>
 								<div className="invalid-feedback">Please select a valid state.</div>
 							</div>
@@ -227,7 +271,7 @@ function EnrollmentForm() {
 								<input
 									type="number"
 									className="form-control"
-									id="validationCustom03"
+									id={`phone-${rowIndex}`}
 									index={rowIndex}
 									defaultValue={item.phone}
 									name="phone"
@@ -240,7 +284,7 @@ function EnrollmentForm() {
 								<label htmlFor={`phoneType-${rowIndex}`} className="form-label">
 									Type
 								</label>
-								<select className="form-select" id={`phoneType-${rowIndex}`} required>
+								<select className="form-select" id={`phoneType-${rowIndex}`} name="type" onChange={(e) => handleInputChangeForContacts(rowIndex, e)} required>
 									{allAllowedPhoneTypes.map((phoneType, phoneTypeIndex) => {
 										return (
 											<option key={`${rowIndex}-${phoneTypeIndex}`} value={phoneType.value}>
@@ -257,7 +301,7 @@ function EnrollmentForm() {
 									{rowIndex === 0 ? (
 										<i className="bi bi-plus-circle" onClick={addContact} />
 									) : (
-										<i className="bi bi-x-circle" onClick={e => removeContact(rowIndex)} />
+										<i className="bi bi-x-circle" onClick={(e) => removeContact(rowIndex)} />
 									)}
 								</p>
 							</div>
@@ -271,7 +315,7 @@ function EnrollmentForm() {
 						<input
 							className={`form-check-input ${errors.termsAgreed && "is-invalid"}`}
 							type="checkbox"
-							value=""
+							checked={formData.termsAgreed}
 							id="termsAgreed"
 							name="termsAgreed"
 							onChange={handleInputChange}
