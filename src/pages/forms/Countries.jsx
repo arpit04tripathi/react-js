@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { getAllCountries, getAllStatesAsync } from "react-country-list";
 import ReactCountryFlag from "react-country-flag";
 import { PhoneInput } from "react-country-phone-input";
+import CountryPhoneInputForm from "../../features/forms/countries/CountryPhoneInputForm";
 
 const Countries = () => {
   const [country, setCountry] = useState("");
@@ -131,6 +132,13 @@ const Countries = () => {
             <pre>{JSON.stringify(getAllCountries()[101], null, 2)}</pre>
           </div>
         </AccordionItem>
+        <AccordionItem
+          itemId="accordion-country-phone-input"
+          parentId="accordionExample"
+          heading="react-phone-number-input"
+        >
+          <CountryPhoneInputForm/>
+        </AccordionItem>        
       </div>
     </div>
   );
