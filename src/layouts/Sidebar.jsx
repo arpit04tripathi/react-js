@@ -4,15 +4,19 @@ const content = [
   { displayText: "How To Structure React Projects", link: "https://blog.webdevsimplified.com/2022-07/react-folder-structure/" },
   { displayText: "Deploy to GitHub Pages", link: "https://blog.logrocket.com/deploying-react-apps-github-pages/" },
   { displayText: "React App To Github Pages", link: "https://www.youtube.com/watch?v=Q9n2mLqXFpU" },
+  { displayText: "Router - Query Params", link: "https://www.basedash.com/blog/guide-to-react-router-query-params"},
+  { displayText: "axios", link: "https://blog.logrocket.com/how-to-make-http-requests-like-a-pro-with-axios/"},
+  { displayText: "Free Public APIs", link: "https://medium.com/@hrishikesh.pandey9955/free-public-apis-for-developers-183230b18b90"},
+  { displayText: "API - jsonplaceholder", link: "https://jsonplaceholder.typicode.com/"},
 ];
 
 function Sidebar() {
   return (
-    <div className="bg-light">
+    <div className="bg-light border border-5 border-primary rounded-5 p-4">
       <p>Sidebar - with json array</p>
       <ul>
       {content.map((item, index) => {
-        return <li><a href={item.link} target="_blank" rel="noopener noreferrer">{item.displayText}</a></li>
+        return <li  key={"li-"+index} ><a href={item.link}target="_blank" rel="noopener noreferrer">{item.displayText}</a></li>
       })}
       </ul>
     </div>

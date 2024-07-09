@@ -75,9 +75,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 nvm use --lts
 node -v > .nvmrc
 nvm use
+```
+```sh
 npm i -g create-react-app
 npm init react-app react-js
 npm start
+OR
+npm create vite@latest react-with-vite
+npm i
+npm run dev
 ```
 
 ```sh
