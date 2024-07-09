@@ -53,11 +53,11 @@ const Countries = () => {
         >
           <ul>
             {listOfReferences.map(({ label, link, available }) => (
-              <li>
+              <li key={label}>
                 <a href={link} target="_blank" rel="noopener noreferrer">
                   {label}
-                </a>{" "}
-                {available && <span>approved</span>}
+                </a>
+                {available && <span> approved</span>}
               </li>
             ))}
           </ul>
@@ -123,7 +123,7 @@ const Countries = () => {
             <ul>
               {getAllCountries().map((country) => {
                 return (
-                  <li>
+                  <li key={country.id} >
                     {country.id} - {country.name} - {country.phone_code}
                   </li>
                 );
@@ -133,6 +133,7 @@ const Countries = () => {
           </div>
         </AccordionItem>
         <AccordionItem
+          show
           itemId="accordion-country-phone-input"
           parentId="accordionExample"
           heading="react-phone-number-input"
